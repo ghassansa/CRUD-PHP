@@ -7,6 +7,12 @@
     <body>
 
         <?php require_once 'process.php'; ?>
+        
+
+        <?php if (isset ($_SESSION['message']));?>
+        <div -<?=$_SESSION['msg_type']?>">
+
+
         <?php
             $mysqli = new mysqli('localhost', 'root','', 'crud') or die(mysqli_error($mysqli));
             $result = $mysqli->query("SELECT * FROM  crud") or die($mysqli->error);
